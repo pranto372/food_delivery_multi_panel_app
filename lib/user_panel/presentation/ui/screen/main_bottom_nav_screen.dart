@@ -1,9 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery_multi_panel_app/user-panel/presentation/ui/screen/home_screen.dart';
-import 'package:food_delivery_multi_panel_app/user-panel/presentation/ui/screen/menu_screen.dart';
-import 'package:food_delivery_multi_panel_app/user-panel/presentation/ui/screen/offer_screen.dart';
-import 'package:food_delivery_multi_panel_app/user-panel/presentation/ui/screen/profile_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/home_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/menu_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/offer_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/profile_screen.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});

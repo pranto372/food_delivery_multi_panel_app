@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
-import 'package:food_delivery_multi_panel_app/user-panel/presentation/ui/auth/sign_up_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_screen.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
