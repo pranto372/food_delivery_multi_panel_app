@@ -36,7 +36,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         onPressed: () {
           // Add your onPressed code here!
         },
-        child: Icon(Icons.shopping_bag),
+        child: Icon(Icons.shopping_bag, color: Colors.white,),
         backgroundColor: Colors.pink,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -47,6 +47,8 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         notchSmoothness: NotchSmoothness.verySmoothEdge,
         leftCornerRadius: 32,
         rightCornerRadius: 32,
+        activeColor: Colors.pink,
+        inactiveColor: Colors.grey,
         onTap: (index) {
           setState(() {
             _currentIndex = index;

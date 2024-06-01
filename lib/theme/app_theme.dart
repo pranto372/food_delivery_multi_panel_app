@@ -48,5 +48,8 @@ class AppTheme {
         ),
       ),
     ),
+    iconTheme: IconThemeData(
+      color: Colors.white
+    )
   );
 }

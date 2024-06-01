@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_screen.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_with_number_screen.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 decoration: (InputDecoration(
-                    hintText: 'Enter your email...', labelText: 'email')),
+                    hintText: 'Enter your Email')),
               ),
               SizedBox(
                 height: 15,
@@ -40,18 +40,29 @@ class LoginScreen extends StatelessWidget {
                 obscureText: false,
                 decoration: (InputDecoration(
                   suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                  hintText: 'Enter your password...',
-                  labelText: 'Password',
+                  hintText: 'Enter your password'
                 )),
               ),
               Row(
                 children: [
+                  // CheckboxListTile(
+                  //   title: Text('Remember me'),
+                  //   value: _isChecked,
+                  //   activeColor: Colors.pink, // Color of the checkbox when checked
+                  //   checkColor: Colors.white, // Color of the check mark
+                  //   onChanged: (bool? value) {
+                  //     setState(() {
+                  //       _isChecked = value ?? false;
+                  //     });
+                  //   },
+                  //   controlAffinity: ListTileControlAffinity.leading, // Position of the checkbox
+                  // ),
                   Container(
                     height: 20,
                     width: 20,
                     margin: EdgeInsets.all(15),
                     child: Icon(
-                      Icons.ramp_right,
+                      Icons.check_box,
                       color: Colors.white,
                     ),
                     decoration: BoxDecoration(
@@ -59,12 +70,9 @@ class LoginScreen extends StatelessWidget {
                       color: AppColors.primaryColor,
                     ),
                   ),
-                  SizedBox(
-                    width: 2,
-                  ),
                   Text('Remember me'),
                   SizedBox(
-                    width: 60,
+                    width: 40,
                   ),
                   Text(
                     'Forgot Password',
@@ -98,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.to(() => SignUpScreen());
+                        Get.to(() => SignUpWithNumberScreen());
                       },
                       child: Text(
                         'sign Up',
