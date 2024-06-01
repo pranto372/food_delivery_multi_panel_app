@@ -1,11 +1,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/guest_sign_up_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_with_number_screen.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool _obscureText = true;
+  bool _isChecked = true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,72 +24,80 @@ class LoginScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 200, left: 55, right: 20),
-                child: Text(
-                  'Welcome Back!',
-                  style: Theme.of(context).textTheme.titleLarge,
+              Center(
+                child: Image.asset(
+                  "assets/images/app_logo.png",
+                  width: 200,
+                  height: 200,
                 ),
               ),
-              SizedBox(
+              Text(
+                'Welcome Back!',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(
                 height: 35,
               ),
               TextFormField(
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
-                decoration: (InputDecoration(
+                decoration: (const InputDecoration(
+                    contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15),
                     hintText: 'Enter your Email')),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               TextFormField(
+                obscureText: _obscureText,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.text,
-                obscureText: false,
                 decoration: (InputDecoration(
-                  suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                  hintText: 'Enter your password'
+                    contentPadding: const EdgeInsets.only(top: 10,bottom: 10,left: 15),
+                  hintText: 'Enter your password',
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        color: _obscureText ? Colors.grey : Colors.blue,
+                      ),
+                      onPressed: (){
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    )
                 )),
               ),
               Row(
                 children: [
-                  // CheckboxListTile(
-                  //   title: Text('Remember me'),
-                  //   value: _isChecked,
-                  //   activeColor: Colors.pink, // Color of the checkbox when checked
-                  //   checkColor: Colors.white, // Color of the check mark
-                  //   onChanged: (bool? value) {
-                  //     setState(() {
-                  //       _isChecked = value ?? false;
-                  //     });
-                  //   },
-                  //   controlAffinity: ListTileControlAffinity.leading, // Position of the checkbox
-                  // ),
-                  Container(
-                    height: 20,
-                    width: 20,
-                    margin: EdgeInsets.all(15),
-                    child: Icon(
-                      Icons.check_box,
-                      color: Colors.white,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: AppColors.primaryColor,
+                  Expanded(
+                    flex: 10,
+                    child: CheckboxListTile(
+                      value: _isChecked,
+                      activeColor: Colors.pink, // Color of the checkbox when checked
+                      checkColor: Colors.white, // Color of the check mark
+                      onChanged: (bool? value) {
+                        setState(() {
+                          _isChecked = value ?? false;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity.leading, // Position of the checkbox
                     ),
                   ),
-                  Text('Remember me'),
-                  SizedBox(
-                    width: 40,
+                  Expanded(
+                    flex: 45,
+                    child: Text(
+                      'Remember me',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
                   ),
-                  Text(
+                  TextButton(onPressed: (){}, child: Text(
                     'Forgot Password',
                     style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  ))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
@@ -88,10 +105,10 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text('Login'),
+                  child: const Text('Login'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Row(
@@ -101,12 +118,12 @@ class LoginScreen extends StatelessWidget {
                     '''Don't have an account?''',
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 4,
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.to(() => SignUpWithNumberScreen());
+                        Get.to(() => const SignUpWithNumberScreen());
                       },
                       child: Text(
                         'sign Up',
@@ -114,14 +131,12 @@ class LoginScreen extends StatelessWidget {
                       ))
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+
               Text(
                 'or',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
@@ -130,9 +145,11 @@ class LoginScreen extends StatelessWidget {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      side: BorderSide(color: AppColors.primaryColor)),
-                  onPressed: () {},
-                  child: Text(
+                      side: const BorderSide(color: AppColors.primaryColor)),
+                  onPressed: () {
+                    Get.to(()=> const GuestSignUpScreen());
+                  },
+                  child: const Text(
                     'Login As Guest',
                     style:
                     TextStyle(color: AppColors.primaryColor, fontSize: 18),

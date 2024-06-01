@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/login_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_screen.dart';
 import 'package:get/get.dart';
 
@@ -13,33 +14,41 @@ class GuestSignUpScreen extends StatelessWidget {
           child: Padding(
               padding: EdgeInsets.all(16),
               child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 200, left: 55, right: 20),
-                  child: Text(
-                    '''Guest Login''',
-                    style: Theme.of(context).textTheme.titleLarge,
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.center, children: [
+                Center(
+                  child: Image.asset(
+                    "assets/images/app_logo.png",
+                    width: 200,
+                    height: 200,
                   ),
+                ),
+                Text(
+                  '''Guest Login''',
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(
                   height: 35,
                 ),
-                Text(
-                  'Mobile Number',
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black),
+                Padding(
+                  padding: const EdgeInsets.only(right: 210),
+                  child: Text(
+                    'Mobile Number',
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black),
+                  ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 8,
                 ),
                 Row(
                   children: [
                     Expanded(
                         flex: 30,
                         child: Container(
-                          height: 60,
+                          height: 50,
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300),
                               borderRadius: BorderRadius.circular(10)),
@@ -59,7 +68,10 @@ class GuestSignUpScreen extends StatelessWidget {
                     Expanded(
                       flex: 70,
                       child: TextFormField(
-                        decoration: (InputDecoration()),
+                        keyboardType: TextInputType.phone,
+                        decoration: (InputDecoration(
+                            contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15)
+                        )),
                       ),
                     )
                   ],
@@ -90,7 +102,7 @@ class GuestSignUpScreen extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () {
-                          Get.to(() => SignUpScreen());
+                          Get.to(() => LoginScreen());
                         },
                         child: Text(
                           'Login',
@@ -99,6 +111,7 @@ class GuestSignUpScreen extends StatelessWidget {
                   ],
                 ),
               ])),
-        ));
+        )
+    );
   }
 }

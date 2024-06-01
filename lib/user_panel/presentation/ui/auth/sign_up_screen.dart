@@ -4,8 +4,15 @@ import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/
 import 'package:get/get.dart';
 
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,71 +22,86 @@ class SignUpScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 200, left: 55, right: 20),
-                child: Text(
-                  'Create Account',
-                  style: Theme.of(context).textTheme.titleLarge,
+              Center(
+                child: Image.asset(
+                  "assets/images/app_logo.png",
+                  width: 200,
+                  height: 200,
                 ),
               ),
-              SizedBox(
+              Text(
+                'Create Account',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(
                 height: 35,
               ),
               TextFormField(
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
-                decoration: (InputDecoration(
+                decoration: (const InputDecoration(
                     hintText: 'Enter your first name',
-                    labelText: 'First Name')),
+                  contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15),
+                )),
               ),
-              SizedBox(
-                height: 15,
+              const SizedBox(
+                height: 20,
               ),
               TextFormField(
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.text,
                 obscureText: false,
-                decoration: (InputDecoration(
+                decoration: (const InputDecoration(
                   hintText: 'Enter your last name',
-                  labelText: 'Last Name',
+                  contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15),
                 )),
               ),
-              SizedBox(
-                height: 15,
+              const SizedBox(
+                height: 20,
               ),
               TextFormField(
-                textInputAction: TextInputAction.done,
+                textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.text,
                 obscureText: false,
-                decoration: (InputDecoration(
-                  hintText: 'Enter your email',
-                  labelText: 'Email',
+                decoration: (const InputDecoration(
+                  hintText: 'Enter your E-mail',
+                  contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15),
                 )),
               ),
-              SizedBox(
-                height: 15,
+              const SizedBox(
+                height: 20,
               ),
               TextFormField(
+                obscureText: _obscureText,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.text,
-                obscureText: false,
                 decoration: (InputDecoration(
-                  suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                  hintText: 'Enter your password',
-                  labelText: 'Password',
+                    contentPadding: const EdgeInsets.only(top: 10,bottom: 10,left: 15),
+                    hintText: 'Enter your password',
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        color: _obscureText ? Colors.grey : Colors.blue,
+                      ),
+                      onPressed: (){
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    )
                 )),
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 30,
               ),
               SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(()=> MainBottomNavScreen());
+                    Get.to(()=> const MainBottomNavScreen());
                   },
-                  child: Text('Create'),
+                  child: const Text('Create'),
                 ),
               ),
             ],
