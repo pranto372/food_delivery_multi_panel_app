@@ -21,6 +21,13 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     Icons.person_pin,
   ];
 
+  final labels = <String>[
+    'Home',
+    'Menu',
+    'Offers',
+    'Profile',
+  ];
+
   final screens = <Widget>[
     HomeScreen(),
     MenuScreen(),
@@ -40,15 +47,36 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         backgroundColor: Colors.pink,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        icons: iconList,
+      bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+        itemCount: iconList.length,
+        tabBuilder: (int index, bool isActive) {
+          final color = isActive ? Colors.pink : Colors.grey;
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                iconList[index],
+                size: 24,
+                color: color,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                labels[index],
+                style: TextStyle(
+                  color: color,
+                  fontSize: 12,
+                ),
+              )
+            ],
+          );
+        },
+        backgroundColor: Colors.white,
         activeIndex: _currentIndex,
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.verySmoothEdge,
         leftCornerRadius: 32,
         rightCornerRadius: 32,
-        activeColor: Colors.pink,
-        inactiveColor: Colors.grey,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
