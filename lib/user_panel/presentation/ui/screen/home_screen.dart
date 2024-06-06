@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/offer_banner.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/add_button.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/category.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/home/menu_items.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/asset_path.dart';
+
+import '../../../widget/utility/add_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,14 +83,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       const MenuItems(),
                       const SizedBox(height: 25),
                       OfferBanner(),
-                      SizedBox(height: 10,),
-                      Text("Most Popular Items",
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Most Popular Items",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Container(
                         height: 480,
                         child: ListView.builder(
@@ -103,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 110,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
                                     color: Colors.black,
                                     width: 0.3,
@@ -122,11 +128,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       flex: 30,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          bottomLeft: Radius.circular(10),
+                                          topLeft: Radius.circular(20),
+                                          bottomLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
+                                          bottomRight: Radius.circular(20),
                                         ),
                                         child: Image.asset(
-                                          "assets/images/card_image.jpg",
+                                          AppImage.cardImage,
                                           height: 110,
                                           fit: BoxFit.cover,
                                         ),
@@ -134,10 +142,68 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     Expanded(
                                       flex: 70,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Column(
-
-                                        )
-                                    )
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'Mojito',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleMedium!
+                                                      .copyWith(
+                                                          color: Colors.black),
+                                                ),
+                                                InkWell(
+                                                  onTap: () {},
+                                                  child: Icon(
+                                                    Icons.info,
+                                                    color: Colors.grey,
+                                                    size: 20,
+                                                  ),
+                                                )
+                                                // IconButton(
+                                                //   onPressed: () {},
+                                                //   icon: Icon(Icons.info),
+                                                // ),
+                                              ],
+                                            ),
+                                            Text(
+                                              'Spicy,tangy Szechuan sauce packas a ton of strong flavaors on top of tender baby shrimp',
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleSmall!
+                                                  .copyWith(fontSize: 12),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text("\$2.50",
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .titleMedium!
+                                                        .copyWith(
+                                                          color: Colors.black,
+                                                        )),
+                                                AddButton(),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -145,7 +211,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),
                       )
-
                     ],
                   ),
                 ),
@@ -157,4 +222,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

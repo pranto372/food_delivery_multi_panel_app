@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/add_button.dart';
 
 class MenuItems extends StatelessWidget {
   const MenuItems({
@@ -48,7 +47,7 @@ class MenuItems extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8,right: 2),
+                padding: const EdgeInsets.only(left: 8, right: 2),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -57,10 +56,10 @@ class MenuItems extends StatelessWidget {
                       children: [
                         Text(
                           "Wonton Soup",
-                          style: Theme.of(context).textTheme.headline6?.copyWith(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          // style: Theme.of(context).textTheme.headline6?.copyWith(
+                          //   fontSize: 16,
+                          //   fontWeight: FontWeight.bold,
+                          // ),
                         ),
                         IconButton(
                           onPressed: () {},
@@ -90,14 +89,14 @@ class MenuItems extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "\$2.50",
-                      style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    AddButton(),
+                    // Text(
+                    //   "\$2.50",
+                    //   style: Theme.of(context).textTheme.headline6?.copyWith(
+                    //      fontSize: 16,
+                    //      fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // AddButton(),
                   ],
                 ),
               ),
@@ -108,4 +107,3 @@ class MenuItems extends StatelessWidget {
     );
   }
 }
-
