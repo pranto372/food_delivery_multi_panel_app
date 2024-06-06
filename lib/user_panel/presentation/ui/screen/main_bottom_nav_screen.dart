@@ -38,6 +38,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: screens[_currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () {

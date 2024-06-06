@@ -23,12 +23,12 @@ class AppTheme {
           prefixIconColor: Colors.grey),
       textTheme: TextTheme(
         titleLarge: const TextStyle(
-          fontSize: 24,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),
         titleMedium: const TextStyle(
-          fontSize: 16,
+          fontSize: 14,
           fontWeight: FontWeight.w600,
           color: AppColors.primaryColor,
         ),
@@ -36,8 +36,13 @@ class AppTheme {
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: Colors.grey.shade600),
+        displayLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black
+        ),
         displayMedium: const TextStyle(
-            fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
+            fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -49,5 +54,5 @@ class AppTheme {
           ),
         ),
       ),
-      iconTheme: IconThemeData(color: Colors.white));
+  );
 }
