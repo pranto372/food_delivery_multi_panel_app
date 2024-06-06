@@ -17,12 +17,12 @@ class _OfferBannerState extends State<OfferBanner> {
     return Container(
       height: 250,
       child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 2,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(top: 6,bottom: 6),
+            padding: EdgeInsets.only(top: 6, bottom: 6),
             child: Container(
                 height: 110,
                 decoration: BoxDecoration(
@@ -30,27 +30,32 @@ class _OfferBannerState extends State<OfferBanner> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
-                          Text("Uplifting anytime",
+                          Text(
+                            "Uplifting anytime",
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
-                          Text("Flat 7% off on Beef Items",
+                          Text(
+                            "Flat 7% off on Beef Items",
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
-                          const SizedBox(height: 6,),
+                          SizedBox(
+                            height: 6,
+                          ),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: Colors.pink),
                             ),
-                            child: const Text(
+                            child: Text(
                               "Order Now",
                               style: TextStyle(
                                 fontSize: 14,
@@ -68,8 +73,7 @@ class _OfferBannerState extends State<OfferBanner> {
                       ),
                     ],
                   ),
-                )
-            ),
+                )),
           );
         },
       ),
