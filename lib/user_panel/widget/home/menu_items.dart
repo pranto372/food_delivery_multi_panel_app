@@ -18,7 +18,7 @@ class MenuItems extends StatelessWidget {
         childAspectRatio: 1.0,
         mainAxisExtent: 230, // Adjusted to fit the content properly
       ),
-      itemCount: 4,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(

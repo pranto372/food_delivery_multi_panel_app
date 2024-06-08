@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/forgot_password_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/guest_sign_up_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_with_number_screen.dart';
 import 'package:get/get.dart';
@@ -42,7 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 decoration: (const InputDecoration(
-                    contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 15),
+                    contentPadding:
+                        EdgeInsets.only(top: 10, bottom: 10, left: 15),
                     hintText: 'Enter your Email')),
               ),
               const SizedBox(
@@ -53,51 +54,56 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.text,
                 decoration: (InputDecoration(
-                    contentPadding: const EdgeInsets.only(top: 10,bottom: 10,left: 15),
-                  hintText: 'Enter your password',
+                    contentPadding:
+                        const EdgeInsets.only(top: 10, bottom: 10, left: 15),
+                    hintText: 'Enter your password',
                     suffixIcon: IconButton(
                       icon: Icon(
                         _obscureText ? Icons.visibility : Icons.visibility_off,
                         color: _obscureText ? Colors.grey : Colors.blue,
                       ),
-                      onPressed: (){
+                      onPressed: () {
                         setState(() {
                           _obscureText = !_obscureText;
                         });
                       },
-                    )
-                )),
+                    ))),
               ),
-              // Row(
-              //   children: [
-              //     Expanded(
-              //       flex: 10,
-              //       child: CheckboxListTile(
-              //         value: _isChecked,
-              //         activeColor: Colors.pink,
-              //         checkColor: Colors.white,
-              //         onChanged: (bool? value) {
-              //           setState(() {
-              //             _isChecked = value ?? false;
-              //           });
-              //         },
-              //         controlAffinity: ListTileControlAffinity.leading,
-              //       ),
-              //     ),
-              //     Expanded(
-              //       flex: 45,
-              //       child: Text(
-              //         'Remember me',
-              //         style: Theme.of(context).textTheme.bodySmall,
-              //       ),
-              //     ),
-              //     TextButton(onPressed: (){}, child: Text(
-              //       'Forgot Password',
-              //       style: Theme.of(context).textTheme.titleMedium,
-              //     ))
-              //   ],
-              // ),
-              /// CheckBoxListTile ***
+              Row(
+                children: [
+                  Expanded(
+                    flex: 10,
+                    child: CheckboxListTile(
+                      value: _isChecked,
+                      activeColor:
+                          Colors.pink, // Color of the checkbox when checked
+                      checkColor: Colors.white, // Color of the check mark
+                      onChanged: (bool? value) {
+                        setState(() {
+                          _isChecked = value ?? false;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity
+                          .leading, // Position of the checkbox
+                    ),
+                  ),
+                  Expanded(
+                    flex: 45,
+                    child: Text(
+                      'Remember me',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Get.to(() => ForgorPasswordScreen());
+                      },
+                      child: Text(
+                        'Forgot Password',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ))
+                ],
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -132,7 +138,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ))
                 ],
               ),
-
               Text(
                 'or',
                 style: Theme.of(context).textTheme.titleSmall,
@@ -148,12 +153,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       backgroundColor: Colors.white,
                       side: const BorderSide(color: AppColors.primaryColor)),
                   onPressed: () {
-                    Get.to(()=> const GuestSignUpScreen());
+                    Get.to(() => const GuestSignUpScreen());
                   },
                   child: const Text(
                     'Login As Guest',
                     style:
-                    TextStyle(color: AppColors.primaryColor, fontSize: 18),
+                        TextStyle(color: AppColors.primaryColor, fontSize: 18),
                   ),
                 ),
               )
