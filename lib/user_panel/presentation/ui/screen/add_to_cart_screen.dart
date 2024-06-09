@@ -124,8 +124,6 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
     );
   }
 
-  ///
-
   ListView get cartList {
     return ListView.builder(
             shrinkWrap: true,
