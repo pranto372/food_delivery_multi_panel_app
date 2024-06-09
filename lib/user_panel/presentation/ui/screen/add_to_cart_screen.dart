@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/increment_decrement_button.dart';
 
 class AddToCartScreen extends StatefulWidget {
   const AddToCartScreen({super.key});
@@ -10,21 +11,6 @@ class AddToCartScreen extends StatefulWidget {
 
 class _AddToCartScreenState extends State<AddToCartScreen> {
   List<bool> isSelected = [true, false];
-  int _quantity = 1;
-
-  void _increment() {
-    setState(() {
-      _quantity++;
-    });
-  }
-
-  void _decrement() {
-    setState(() {
-      if (_quantity > 1) {
-        _quantity--;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,130 +47,174 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 16, left: 12, right: 12, bottom: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              cart,
-            ],
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 16, left: 12, right: 12, bottom: 16),
+            child: cartList,
           ),
-        ),
+          Positioned(
+            top: 580,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: Offset(0, 5),
+                    )
+                  ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20)),
+                ),
+                padding: const EdgeInsets.all(5),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 14,right: 14,bottom: 18),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total',
+                            style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 28)
+                          ),
+                          Text(
+                            '\$12.50',
+                            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 24)
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 30.0),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // Add your checkout logic here
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.pink,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Proceed to Checkout',
+                            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 18,color: Colors.white)
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
 
-  ListView get cart {
+  ListView get cartList {
     return ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 15,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: Container(
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.03),
-                          blurRadius: 15,
-                          offset: Offset(0, 5),
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 12,top: 12,bottom: 12,right: 12),
-                            child: Image.asset(
-                              "assets/images/burger.png",
-                              height: 90,
-                              width: 70,
-                              fit: BoxFit.cover,
-                            ),
+            shrinkWrap: true,
+            itemCount: 15,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.03),
+                        blurRadius: 15,
+                        offset: Offset(0, 5),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 20,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 12, top: 12, bottom: 12, right: 12),
+                          child: Image.asset(
+                            "assets/images/burger.png",
+                            height: 90,
+                            width: 70,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        Expanded(
-                          flex: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Vegetable Burger',
-                                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 12),
-                                      child: InkWell(
-                                        onTap: () {},
-                                        child: Icon(
-                                          Icons.delete,
-                                          color: Colors.grey,
-                                          size: 24,
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                      ),
+                      Expanded(
+                        flex: 50,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 5,
+                              child: ListTile(
+                                title: Text(
+                                  'Vegetable Burger',
+                                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                subtitle: Text(
+                                  'Size: Regular',
+                                ),
+                                trailing: InkWell(
+                                  onTap: () {},
+                                  child: Icon(
+                                    Icons.delete,
+                                    color: Colors.pink.shade300,
+                                    size: 24,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 5,
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      "\$2.50",
-                                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                                        fontSize: 16,
-                                        color: Colors.black
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 16),
+                                      child: Text(
+                                        "\$2.50",
+                                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                                            fontSize: 16,
+                                            color: Colors.black),
                                       ),
                                     ),
-                                    Row(
-                                      children: [
-                                        IconButton(
-                                          icon: Icon(
-                                            Icons.remove_circle_outline,
-                                            color: Colors.pink,
-                                          ),
-                                          onPressed: _decrement,
-                                        ),
-                                        Text(
-                                          '$_quantity',
-                                          style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
-                                        ),
-                                        IconButton(
-                                          icon: Icon(
-                                            Icons.add_circle_outline,
-                                            color: Colors.pink,
-                                          ),
-                                          onPressed: _increment,
-                                        ),
-                                      ],
-                                    )
+                                    IncrementDecrementButton()
                                   ],
                                 )
-                              ],
-                            ),
-                          ),
+                            )
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                );
-              },
-            );
+                ),
+              );
+            },
+          );
   }
 }
-///fusdhfihnih
+
+

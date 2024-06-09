@@ -69,41 +69,42 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ))),
               ),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 10,
-                    child: CheckboxListTile(
-                      value: _isChecked,
-                      activeColor:
-                          Colors.pink, // Color of the checkbox when checked
-                      checkColor: Colors.white, // Color of the check mark
-                      onChanged: (bool? value) {
-                        setState(() {
-                          _isChecked = value ?? false;
-                        });
-                      },
-                      controlAffinity: ListTileControlAffinity
-                          .leading, // Position of the checkbox
-                    ),
-                  ),
-                  Expanded(
-                    flex: 45,
-                    child: Text(
-                      'Remember me',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        Get.to(() => ForgorPasswordScreen());
-                      },
-                      child: Text(
-                        'Forgot Password',
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ))
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       flex: 10,
+              //       child: CheckboxListTile(
+              //         value: _isChecked,
+              //         activeColor:
+              //             Colors.pink,
+              //         checkColor: Colors.white,
+              //         onChanged: (bool? value) {
+              //           setState(() {
+              //             _isChecked = value ?? false;
+              //           });
+              //         },
+              //         controlAffinity: ListTileControlAffinity
+              //             .leading, // Position of the checkbox
+              //       ),
+              //     ),
+              //     Expanded(
+              //       flex: 45,
+              //       child: Text(
+              //         'Remember me',
+              //         style: Theme.of(context).textTheme.bodySmall,
+              //       ),
+              //     ),
+              //     TextButton(
+              //         onPressed: () {
+              //           Get.to(() => ForgorPasswordScreen());
+              //         },
+              //         child: Text(
+              //           'Forgot Password',
+              //           style: Theme.of(context).textTheme.titleMedium,
+              //         ))
+              //   ],
+              // ),
+              /// CheckBoxListTile
               const SizedBox(
                 height: 10,
               ),
