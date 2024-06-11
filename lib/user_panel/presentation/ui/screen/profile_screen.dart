@@ -45,7 +45,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 SizedBox(
                   height: 10,
                 ),
-<<<<<<< HEAD
                 Text(
                   'Login to see your info',
                   style: TextStyle(
@@ -67,60 +66,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 SizedBox(
                   height: 15,
                 ),
-                Container(
-                  height: 300,
-                  width: double.infinity,
-                  child: ListView.builder(
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            ListTile(
-                              leading: Icon(
-                                Icons.language,
-                                color: Colors.grey.shade500,
-                                size: 20,
-                              ),
-                              title: Text(
-                                'Change Language',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black),
-                              ),
-                            ),
-                            Divider(
-                              thickness: 0.5,
-                            )
-                          ],
-                        );
-                      }),
-                ),
-
-                // ListTile(
-                //   leading: Icon(Icons.language),
-                //   trailing: Text('Change Language'),
-                // ),
-                // Divider(),
-                // ListTile(
-                //   leading: Icon(Icons.contact_page),
-                //   trailing: Text('Contact Us'),
-                // ),
-                // Divider(),
-                // ListTile(
-                //   leading: Icon(Icons.contact_page),
-                //   trailing: Text('About Us'),
-                // ),
-                // Divider(),
-                // ListTile(
-                //   leading: Icon(Icons.contact_page),
-                //   trailing: Text('Cookies Policy'),
-                // ),
-                // Divider(),
-              ],
-            ),
-=======
-              ),
               SizedBox(
                 height: 15,
               ),
@@ -153,11 +98,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Divider(),
             ],
->>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
           ),
         ),
       ),
-    );
+    ));
   }
 }
-///bvhfsgub
+
