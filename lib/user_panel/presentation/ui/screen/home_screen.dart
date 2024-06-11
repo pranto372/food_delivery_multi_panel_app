@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/widget/cart_item.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/offer_banner.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/category.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/home/menu_items.dart';
 
+<<<<<<< HEAD
 import '../../../widget/utility/popularItems.dart';
 
+=======
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Image.asset(
-          "assets/images/app_logo.png",
+          AppImage.appLogo,
           width: 100,
           height: 50,
         ),
@@ -52,12 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             "Our Menu",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                             style: Theme.of(context).textTheme.titleLarge
                           ),
                           TextButton(
                             onPressed: () {},
@@ -68,17 +69,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       const Category(),
                       const SizedBox(height: 20),
-                      const Text(
+                      Text(
                         "Featured Items",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       const MenuItems(),
                       const SizedBox(height: 25),
                       OfferBanner(),
@@ -87,15 +85,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Text(
                         "Most Popular Items",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
+<<<<<<< HEAD
                       PopularItems()
+=======
+                      CartItem()
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
                     ],
                   ),
                 ),
@@ -107,3 +106,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

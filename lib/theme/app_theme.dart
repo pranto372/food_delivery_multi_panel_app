@@ -3,9 +3,35 @@ import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+<<<<<<< HEAD
     inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
+=======
+      inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: AppColors.primaryColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.grey.shade300),
+          ),
+          hintStyle: TextStyle(
+            color: Colors.grey.shade400,
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+          ),
+          prefixIconColor: Colors.grey),
+      textTheme: TextTheme(
+        titleLarge: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -34,6 +60,7 @@ class AppTheme {
       ),
       titleSmall: TextStyle(
           fontSize: 14,
+<<<<<<< HEAD
           fontWeight: FontWeight.w400,
           color: Colors.grey.shade600),
       displayLarge: TextStyle(
@@ -48,6 +75,31 @@ class AppTheme {
         elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
+=======
+          fontWeight: FontWeight.w600,
+          color: AppColors.primaryColor,
+        ),
+        titleSmall: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.grey.shade600),
+        displayLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black
+        ),
+        displayMedium: const TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primaryColor,
+          foregroundColor: Colors.white,
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
         ),
       ),
     ),

@@ -45,6 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 SizedBox(
                   height: 10,
                 ),
+<<<<<<< HEAD
                 Text(
                   'Login to see your info',
                   style: TextStyle(
@@ -118,6 +119,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 // Divider(),
               ],
             ),
+=======
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              ListTile(
+                leading: Icon(Icons.language),
+                title: Text('Change Language',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.contact_page),
+                title: Text('Contact Us',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.contact_page),
+                title: Text('About Us',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.contact_page),
+                title: Text('Cookies Policy',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
+                ),
+              ),
+              Divider(),
+            ],
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
           ),
         ),
       ),
