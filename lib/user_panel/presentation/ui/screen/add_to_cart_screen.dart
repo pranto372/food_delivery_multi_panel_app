@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/check_out_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/increment_decrement_button.dart';
+import 'package:get/get.dart';
 
 class AddToCartScreen extends StatefulWidget {
   const AddToCartScreen({super.key});
@@ -99,7 +101,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                         height: 50.0,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Add your checkout logic here
+                            Get.to(()=> CheckOutScreen());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pink,
