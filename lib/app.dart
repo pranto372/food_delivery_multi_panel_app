@@ -13,7 +13,9 @@ class FoodieFrenzy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       home: LoginScreen(),
-      initialBinding:ControllerBinder(),
+      initialBinding: ControllerBinder(),
     );
   }
 }
+//app.dart
+
