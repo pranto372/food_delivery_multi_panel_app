@@ -99,17 +99,5 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-
-//   AppBar get profile_appbar_section {
-//     return AppBar(
-//       automaticallyImplyLeading: false,
-//       title: Text(
-//         'My  Profile',
-//         style: Theme.of(context)
-//             .textTheme
-//             .titleMedium!
-//             .copyWith(color: Colors.black, fontSize: 18),
-//       ),
-//     );
-//   }
 }
+///bvhfsgub
