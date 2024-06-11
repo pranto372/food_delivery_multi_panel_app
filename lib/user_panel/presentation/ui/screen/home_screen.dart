@@ -4,8 +4,12 @@ import 'package:food_delivery_multi_panel_app/user_panel/widget/offer_banner.dar
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/category.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/home/menu_items.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/asset_path.dart';
 
+<<<<<<< HEAD
+import '../../../widget/utility/popularItems.dart';
+
+=======
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -86,7 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 20,
                       ),
+<<<<<<< HEAD
+                      PopularItems()
+=======
                       CartItem()
+>>>>>>> f508c76b9b0b41d293f065a1a6037526803111c8
                     ],
                   ),
                 ),
