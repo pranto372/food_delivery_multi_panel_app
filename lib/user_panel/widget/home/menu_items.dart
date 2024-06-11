@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utility/add_button.dart';
+
 class MenuItems extends StatelessWidget {
   const MenuItems({
     super.key,
@@ -89,14 +91,12 @@ class MenuItems extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Text(
-                    //   "\$2.50",
-                    //   style: Theme.of(context).textTheme.headline6?.copyWith(
-                    //      fontSize: 16,
-                    //      fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
-                    // AddButton(),
+                    Text("\$2.50",
+                        style:
+                            Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  color: Colors.black,
+                                )),
+                    AddButton(),
                   ],
                 ),
               ),

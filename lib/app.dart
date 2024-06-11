@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_multi_panel_app/controller_binder.dart';
 import 'package:food_delivery_multi_panel_app/theme/app_theme.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/login_screen.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ class FoodieFrenzy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       home: LoginScreen(),
+      initialBinding:ControllerBinder(),
     );
   }
 }
