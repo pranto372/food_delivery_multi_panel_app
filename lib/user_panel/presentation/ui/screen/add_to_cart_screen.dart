@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/screen/check_out_screen.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/app_search_bar.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/increment_decrement_button.dart';
 import 'package:get/get.dart';
 
@@ -52,7 +51,8 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 16, left: 12, right: 12, bottom: 16),
+            padding:
+                const EdgeInsets.only(top: 16, left: 12, right: 12, bottom: 16),
             child: cartList,
           ),
           Positioned(
@@ -78,21 +78,24 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                 ),
                 padding: const EdgeInsets.all(5),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 14,right: 14,bottom: 18),
+                  padding:
+                      const EdgeInsets.only(left: 14, right: 14, bottom: 18),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Total',
-                            style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 28)
-                          ),
-                          Text(
-                            '\$12.50',
-                            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 24)
-                          ),
+                          Text('Total',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(fontSize: 28)),
+                          Text('\$12.50',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(fontSize: 24)),
                         ],
                       ),
                       SizedBox(height: 30.0),
@@ -101,7 +104,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                         height: 50.0,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(()=> CheckOutScreen());
+                            Get.to(() => CheckOutScreen());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pink,
@@ -109,10 +112,11 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                           ),
-                          child: Text(
-                            'Proceed to Checkout',
-                            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 18,color: Colors.white)
-                          ),
+                          child: Text('Proceed to Checkout',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(fontSize: 18, color: Colors.white)),
                         ),
                       ),
                     ],
@@ -128,95 +132,96 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
 
   ListView get cartList {
     return ListView.builder(
-            shrinkWrap: true,
-            itemCount: 15,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Container(
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.03),
-                        blurRadius: 15,
-                        offset: Offset(0, 5),
-                      )
-                    ],
+      shrinkWrap: true,
+      itemCount: 15,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: Container(
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.03),
+                  blurRadius: 15,
+                  offset: Offset(0, 5),
+                )
+              ],
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 20,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 12, top: 12, bottom: 12, right: 12),
+                    child: Image.asset(
+                      "assets/images/burger.png",
+                      height: 90,
+                      width: 70,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: Row(
+                ),
+                Expanded(
+                  flex: 50,
+                  child: Column(
                     children: [
                       Expanded(
-                        flex: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 12, top: 12, bottom: 12, right: 12),
-                          child: Image.asset(
-                            "assets/images/burger.png",
-                            height: 90,
-                            width: 70,
-                            fit: BoxFit.cover,
+                        flex: 5,
+                        child: ListTile(
+                          title: Text(
+                            'Vegetable Burger',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
+                          ),
+                          subtitle: Text(
+                            'Size: Regular',
+                          ),
+                          trailing: InkWell(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.delete,
+                              color: Colors.pink.shade300,
+                              size: 24,
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        flex: 50,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 5,
-                              child: ListTile(
-                                title: Text(
-                                  'Vegetable Burger',
-                                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                subtitle: Text(
-                                  'Size: Regular',
-                                ),
-                                trailing: InkWell(
-                                  onTap: () {},
-                                  child: Icon(
-                                    Icons.delete,
-                                    color: Colors.pink.shade300,
-                                    size: 24,
-                                  ),
+                          flex: 5,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 16),
+                                child: Text(
+                                  "\$2.50",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                          fontSize: 16, color: Colors.black),
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              flex: 5,
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 16),
-                                      child: Text(
-                                        "\$2.50",
-                                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                                            fontSize: 16,
-                                            color: Colors.black),
-                                      ),
-                                    ),
-                                    IncrementDecrementButton()
-                                  ],
-                                )
-                            )
-                          ],
-                        ),
-                      ),
+                              IncrementDecrementButton()
+                            ],
+                          ))
                     ],
                   ),
                 ),
-              );
-            },
-          );
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }
-
-

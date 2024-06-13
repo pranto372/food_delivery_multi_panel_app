@@ -8,7 +8,6 @@ import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/asset_pa
 
 import '../../../widget/utility/popularItems.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,24 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Image.asset(
-          AppImage.appLogo,
-          width: 100,
-          height: 50,
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.location_on_sharp,
-              color: Colors.pink,
-              size: 32,
-            ),
-          ),
-        ],
-      ),
+      appBar: appBarSection(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 16, right: 12),
@@ -55,10 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Our Menu",
-                             style: Theme.of(context).textTheme.titleLarge
-                          ),
+                          Text("Our Menu",
+                              style: Theme.of(context).textTheme.titleLarge),
                           TextButton(
                             onPressed: () {},
                             child: Text(
@@ -71,10 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: 10),
                       const Category(),
                       const SizedBox(height: 20),
-                      Text(
-                        "Featured Items",
-                        style: Theme.of(context).textTheme.titleLarge
-                      ),
+                      Text("Featured Items",
+                          style: Theme.of(context).textTheme.titleLarge),
                       const SizedBox(height: 20),
                       const MenuItems(),
                       const SizedBox(height: 25),
@@ -82,10 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        "Most Popular Items",
-                        style: Theme.of(context).textTheme.titleLarge
-                      ),
+                      Text("Most Popular Items",
+                          style: Theme.of(context).textTheme.titleLarge),
                       SizedBox(
                         height: 20,
                       ),
@@ -101,5 +77,25 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-}
 
+  AppBar appBarSection() {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      title: Image.asset(
+        AppImage.appLogo,
+        width: 100,
+        height: 50,
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.location_on_sharp,
+            color: Colors.pink,
+            size: 32,
+          ),
+        ),
+      ],
+    );
+  }
+}

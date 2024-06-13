@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/forgot_password_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/guest_sign_up_screen.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/ui/auth/sign_up_with_number_screen.dart';
 import 'package:get/get.dart';

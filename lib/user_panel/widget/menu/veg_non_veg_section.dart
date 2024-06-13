@@ -4,7 +4,7 @@ class veg_non_veg_section extends StatelessWidget {
   final String imagePath;
   final Color color;
   final Color iconColor;
-  final IconData icon;
+  final Widget icon;
   final String text;
   final double? size;
   final VoidCallback onTap;
@@ -48,11 +48,7 @@ class veg_non_veg_section extends StatelessWidget {
             SizedBox(
               width: 5,
             ),
-            Icon(
-              icon,
-              color: iconColor,
-              size: 15,
-            ),
+            icon
           ],
         ),
       ),

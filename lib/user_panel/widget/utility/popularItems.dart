@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/cardImage.dart';
 
 import 'add_button.dart';
-import 'asset_path.dart';
 
 class PopularItems extends StatelessWidget {
   const PopularItems({
@@ -38,22 +38,7 @@ class PopularItems extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 30,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                      child: Image.asset(
-                        AppImage.cardImage,
-                        height: 110,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                  cardImage(),
                   Expanded(
                     flex: 70,
                     child: Padding(

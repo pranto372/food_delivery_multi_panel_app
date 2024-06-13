@@ -3,7 +3,7 @@ import 'package:food_delivery_multi_panel_app/theme/colors/app_colors.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/presentation/state_holders/selected_button_controller.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/home/menu_items.dart';
 import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/asset_path.dart';
-import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/popularItems.dart';
+import 'package:food_delivery_multi_panel_app/user_panel/widget/utility/close_button.dart';
 import 'package:get/get.dart';
 
 import '../../../widget/category.dart';
@@ -68,7 +68,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                 },
                                 imagePath: AppImage.NonvegImage,
                                 text: 'Non-veg',
-                                icon: Icons.close,
+                                icon: closeButton(),
                                 iconColor: controller.isButtonSelected.value
                                     ? Colors.transparent
                                     : Colors.red,
@@ -87,7 +87,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                   color: controller.isButtonSelected.value
                                       ? Colors.white
                                       : Colors.grey.shade200,
-                                  icon: Icons.close,
+                                  icon: closeButton(),
                                   iconColor: controller.isButtonSelected.value
                                       ? Colors.red
                                       : Colors.transparent,
